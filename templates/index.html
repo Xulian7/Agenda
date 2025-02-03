@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horario Interactivo</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Horario de Mixie</h1>
+
+    <!-- Panel de creación -->
+    <div id="panel-creacion">
+      <input
+        type="text"
+        id="nombre-actividad"
+        placeholder="Nombre de la actividad"
+      />
+      <select id="icono-actividad">
+        <option value="icono1.ico">🔢</option>
+        <!-- Matemáticas -->
+        <option value="icono2.ico">💻</option>
+        <!-- Informática -->
+        <option value="icono3.ico">⚽</option>
+        <!-- Deporte -->
+        <option value="icono4.ico">🔬</option>
+        <!-- Ciencia -->
+        <option value="icono5.ico">🗣️</option>
+        <!-- Idioma -->
+        <option value="icono6.ico">🍽️</option>
+        <!-- Descansar -->
+        <option value="icono7.ico">📝</option>
+        <!-- Tareas -->
+        <option value="icono8.ico">🎮</option>
+        <!-- Jugar -->
+      </select>
+      <button onclick="crearSticker()">Crear</button>
+      <div id="stickers-creados"></div>
+    </div>
+
+    <!-- Panel de horario -->
+    <table id="horario">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Lunes</th>
+          <th>Martes</th>
+          <th>Miércoles</th>
+          <th>Jueves</th>
+          <th>Viernes</th>
+          <th>Sábado</th>
+          <th>Domingo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in range(5) %}
+        <tr>
+          <td>Bloque {{ i+1 }}</td>
+          {% for dia in ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes',
+          'Sábado', 'Domingo'] %}
+          <td data-dia="{{ dia }}" data-hora="Bloque {{ i+1 }}"></td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: #ffe6f2;
+    text-align: center;
+}
+
+h1 {
+    color: #ff66b2;
+}
+
+#panel-creacion {
+    background-color: #fff3f3;
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.sticker {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    background-color: #ffccff;
+    border-radius: 10px;
+    cursor: grab;
+}
+
+.sticker img {
+    width: 30px;
+    height: 30px;
+}
+
+.editar {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.eliminar {
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid #ff66b2;
+    padding: 10px;
+    background-color: #fff;
+    width: 12%;
+    height: 50px;
+    vertical-align: middle;
+}
+
+td {
+    text-align: center;
+}
